@@ -1,0 +1,19 @@
+﻿<Window x:Class="RLockerClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RLockerClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="107.447" Width="525">
+    <StackPanel>
+        <WrapPanel>
+            <Label Content="Is Master"/>
+            <CheckBox x:Name="IsMaster" Height="15" />
+        </WrapPanel>
+        <WrapPanel>
+        <Label Content="Master code"/>
+            <TextBox x:Name="tbConnectionId" Width="300"></TextBox>
+        </WrapPanel>
+    </StackPanel>
+</Window>
