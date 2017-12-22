@@ -113,8 +113,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery.signalR-2.1.2.js" />
-    <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -123,6 +121,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Hubs\CommandHub.cs" />
+    <Compile Include="Model\Intrefaces\ITokenGenerator.cs" />
+    <Compile Include="Model\Intrefaces\ITokenManager.cs" />
+    <Compile Include="Model\Intrefaces\ITokenPersistance.cs" />
+    <Compile Include="Model\TokenGenerator.cs" />
+    <Compile Include="Model\TokenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Start\Startup.cs" />
   </ItemGroup>
@@ -137,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

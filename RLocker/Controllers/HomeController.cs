@@ -7,7 +7,15 @@ namespace RLocker.Controllers
         [HttpGet]
         public IHttpActionResult Index()
         {
-            return Json("{ test: 'ala'}");
+            return Json(new { OK = "Up and running:)" });
+        }
+
+        [HttpGet]
+        public IHttpActionResult GenerateToken()
+        {
+
+
+            return Json(new { OK = "Up and running:)" });
         }
     }
 }

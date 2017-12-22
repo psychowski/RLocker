@@ -14,7 +14,7 @@ namespace RLockerClient.Model
         public event PropertyChangedEventHandler PropertyChanged;
 
         public bool IsMaster { get { return config.IsMaster; } set { config.IsMaster = value; NotifyPropertyChanged(); } }
-        public string CorrelationId { get { return config.CorrelationId; } set { config.CorrelationId = value; NotifyPropertyChanged(); } }
+        public string CorrelationId { get { return config.CorrelationId; } }
 
         public RemoteLockerViewModel(ILocker lockProvider, IConnection connection)
         {
@@ -27,19 +27,15 @@ namespace RLockerClient.Model
             this.config = new ClientConfiguration();
         }
 
-        public void GenerateCorrelationId()
-        {
-            config.CorrelationId = Guid.NewGuid().ToString().ToUpper();
-        }
-
         public void Connect()
         {
             connection.ConnectToServer("http://localhost:10957");
         }
 
-        public void SetCorrelationId()
+        public void SetCorrelationId(string correlationId)
         {
-            connection.SetCorelationId(CorrelationId);
+            config.CorrelationId = correlationId;
+            connection.SetCorelationId(correlationId);
         }
 
         private void SendLockCommand(bool isLocked)

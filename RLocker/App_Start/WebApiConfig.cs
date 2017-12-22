@@ -16,8 +16,8 @@ namespace RLocker
 
             config.Routes.MapHttpRoute(
                name: "DefaultApi1",
-               routeTemplate: "api/{controller}/{action}/{id}",
-               defaults: new { id = RouteParameter.Optional }
+               routeTemplate: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Index", id = RouteParameter.Optional }
            );
 
             config.Routes.MapHttpRoute(
